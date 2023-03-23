@@ -4,23 +4,22 @@ import jwt  from "jsonwebtoken";
 import { get } from "mongoose";
 
 
+// Generate tokens for user 
+// const  getToken  = async (user)=> {
+//   return  await jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn:"1d"})
+// }
+
+
 // Create new user
-
-const  getToken  = async (user)=> {
-  return  await jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn:"1d"})
-}
 export const createUser = async (req, res) => {
-
     console.log(req.body);
-
     try {
-
       const  user   =   await  User.findOne({email:req.body.email});
       if(user) {
-  return  res.status(409).json({
-    status:"fail",
-    message:"Email has been taken by other user",
-  })
+        return  res.status(409).json({
+          status:"fail",
+          message:"Email has been taken by other user",
+        })
       }
       let newUser = await  User.create({
         username: req.body.username,
@@ -43,9 +42,10 @@ export const createUser = async (req, res) => {
   }
 };
  
-export  const   login  =  async (req,res,next)  => {
+export const login=async (req,res,next)  => {
     try { 
 
+    
        const  user  =  await  User.findOne({email:req.body.email});
 
        if (!user) {
@@ -55,7 +55,7 @@ export  const   login  =  async (req,res,next)  => {
        })        
        }
 
-        if(user.passwor!== req.body.password){
+        if(user.password !== req.body.password){
    return   res.status(401).json({
     status:"fail",
     email:"incorrect email and password"
@@ -63,6 +63,7 @@ export  const   login  =  async (req,res,next)  => {
      } 
       
       return  res.status(200).json({
+        token: await jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn:"1d"}),
         status:"success",
         user
       })
