@@ -28,13 +28,13 @@ export const createUser = async (req, res) => {
         role: req.body.role,
         password: req.body.password
       })
-      const token  =  await  getToken(user);
+      // const token  =  await  getToken(user);
     // const user = new User(req.body);
    console.log(user);
     res.status(201).json(
       {  
         user,
-        token,
+        // token,
       
       });
   } catch (error) {
