@@ -4,6 +4,7 @@ import connectDB from "./config/db";
 import userRouter from "./routes/authRoute";
 import applicationRouter from './routes/applicationRoutes'
 import eventRouter from './routes/eventRoute'
+import cors  from 'cors'
 dotenv.config();
 
 
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 8081;
 connectDB();
 
 app.use(express.json());
+app.use(cors());
 
 
 // Mount the user router to the /api/v1 path
