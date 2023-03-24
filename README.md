@@ -48,3 +48,23 @@ NodeJs, Exrpess, MongoDb Resful Api
 5. Delete Application
     https://klabbackend-sbhs.onrender.com/api/v1/application/:id
 
+#3. Events 
+
+1. Create Event
+    https://klabbackend-sbhs.onrender.com/api/v1/event
+
+
+2. Gell all Event
+    https://klabbackend-sbhs.onrender.com/api/v1/events
+
+
+3. Get One Event
+    https://klabbackend-sbhs.onrender.com/api/v1/event/:id
+
+
+4.Update Event
+    https://klabbackend-sbhs.onrender.com/api/v1/event/:id
+
+
+5. Delete Event
+    https://klabbackend-sbhs.onrender.com/api/v1/event/:id
