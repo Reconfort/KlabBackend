@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db";
 import userRouter from "./routes/authRoute";
 import applicationRouter from './routes/applicationRoutes'
+import eventRouter from './routes/eventRoute'
 dotenv.config();
 
 
@@ -16,8 +17,11 @@ app.use(express.json());
 // Mount the user router to the /api/v1 path
 app.use('/api/v1', userRouter);
 
-// Mount the user router to the /api/v1 path
+// Mount the application router to the /api/v1 path
 app.use('/api/v1', applicationRouter);
+
+// Mount the events router to the /api/v1 path
+app.use('/api/v1', eventRouter);
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT}`)
