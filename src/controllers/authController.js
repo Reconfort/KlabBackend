@@ -33,7 +33,8 @@ export const createUser = async (req, res) => {
    console.log(user);
     res.status(201).json(
       {  
-        user,
+        status:true,
+        user
         // token,
       
       });
