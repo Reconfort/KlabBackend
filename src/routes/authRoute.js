@@ -4,7 +4,7 @@ import { createUser, getUsers, getUserById, updateUserById, deleteUserById,login
 const router = express.Router();
 
 // Create new user
-router.post('/users/signup', createUser);
+router.post('/users', createUser);
 
 router.post('/users/login/',login);
 
