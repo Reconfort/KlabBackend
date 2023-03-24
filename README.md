@@ -34,17 +34,17 @@ NodeJs, Exrpess, MongoDb Resful Api
     https://klabbackend-sbhs.onrender.com/api/v1/application
 
 
-3. Gell all Applications
+2. Gell all Applications
     https://klabbackend-sbhs.onrender.com/api/v1/application
 
 
-4. Get One Application
+3. Get One Application
     https://klabbackend-sbhs.onrender.com/api/v1/application/:id
 
 
-5.Update Application
+4.Update Application
     https://klabbackend-sbhs.onrender.com/api/v1/application/:id
 
 
-6. Delete Application
+5. Delete Application
     https://klabbackend-sbhs.onrender.com/api/v1/application/:id
