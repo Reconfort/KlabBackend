@@ -1,9 +1,20 @@
 import Event from "../models/eventModels";
-
+import { uploadToCloud } from "../helper/cloud";
 //create new Events
 export const createEvent = async (req, res) => {
   try {
-    const event = new Event(req.body);
+    const result = await uploadToCloud(req.file, res);
+
+    const event = new Event({
+      title: req.body.title,
+      details: req.body.details,
+      link: req.body.link,
+      location: req.body.location,
+      category: req.body.category,
+      profile: result.secure_url,
+      startDate: req.body.startDate,
+      endDate: req.body.startDate,
+    });
     await event.save();
     res.status(201).json(event);
   } catch (err) {

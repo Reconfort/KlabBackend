@@ -1,4 +1,5 @@
 import express from 'express';
+import fileUpload from "../helper/multer"
 import {
   createEvent,
   getEvents,
@@ -16,7 +17,7 @@ router.get('/events', getEvents);
 router.get('/event/:id', getEventById);
 
 // Create new event
-router.post('/event', createEvent);
+router.post('/event',fileUpload.single("profile"), createEvent);
 
 // Update event by id
 router.put('/event/:id', updateEvent);
