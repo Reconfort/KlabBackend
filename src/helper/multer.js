@@ -5,7 +5,7 @@ const fileUpload =multer({
     storage: multer.diskStorage({}),
     fileFilter: (req, file , cb)=>{
         let ext = path.extname(file.originalname);
-        if(ext!== '.png' && ext!== '.jpg' && ext!== '.jpeg' 
+        if(ext!== '.png' && ext!== '.jpg' && ext!== '.jpeg'  && ext!== '.pdf'
         && ext!== '.gif' && ext!== '.tif' && ext!== '.webp' && ext!== '.bmp' && ext!== '.tiff'){
             return cb(new Error('Invalid file type'), false);
         }
