@@ -7,6 +7,7 @@ import applicationRouter from './routes/applicationRoutes'
 import eventRouter from './routes/eventRoute'
 import programRouter from './routes/programsRouter'
 import teamRouter from './routes/teamRouter'
+import contactRouter from './routes/contactRouter'
 import cors  from 'cors'
 dotenv.config();
 
@@ -33,6 +34,9 @@ app.use('/api/v1', programRouter);
 
 // Mount the team router to the /api/v1 path
 app.use('/api/v1', teamRouter);
+
+// Mount the contact router to the /api/v1 path
+app.use('/api/v1', contactRouter);
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT}`)
