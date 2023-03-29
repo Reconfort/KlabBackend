@@ -1,12 +1,6 @@
 import express from 'express';
 import fileUpload from "../helper/multer";
-// import {
-//   createEvent,
-//   getPrograms,
-//   getEventById,
-//   updateEvent,
-//   deleteEvent,
-// } from '../controllers/eventController';\
+
 import { getPrograms, getProgramById, createProgram, updateProgram, deleteProgram } from '../controllers/programController';
 
 const router = express.Router();
