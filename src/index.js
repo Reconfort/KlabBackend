@@ -9,6 +9,8 @@ import programRouter from './routes/programsRouter'
 import teamRouter from './routes/teamRouter'
 import contactRouter from './routes/contactRouter'
 import partnerRouter from './routes/partnerRoutes'
+import parentRoute from "./routes/parentRouter";
+
 import cors  from 'cors'
 dotenv.config();
 
@@ -32,6 +34,8 @@ app.use('/api/v1', eventRouter);
 
 // Mount the program router to the /api/v1 path
 app.use('/api/v1', programRouter);
+app.use("/api/v1", parentRoute);
+
 
 // Mount the team router to the /api/v1 path
 app.use('/api/v1', teamRouter);

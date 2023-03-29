@@ -25,6 +25,10 @@ const programSchema =  new mongoose.Schema({
         type: String,
         required: true,
     },
+    deadline: {
+        type: Date,
+        required: true,
+    },
     startDate: {
         type: Date,
         required: true,
