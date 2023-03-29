@@ -16,7 +16,7 @@ NodeJs, Exrpess, MongoDb Resful Api
 4. Get One User
    https://klabbackend-sbhs.onrender.com/api/v1/users/:id
 
-5.Update user
+5. Update user
 https://klabbackend-sbhs.onrender.com/api/v1/users/:id
 
 6. Delete user
@@ -33,7 +33,7 @@ https://klabbackend-sbhs.onrender.com/api/v1/users/:id
 3. Get One Application
    https://klabbackend-sbhs.onrender.com/api/v1/application/:id
 
-4.Update Application
+4. Update Application
 https://klabbackend-sbhs.onrender.com/api/v1/application/:id
 
 5. Delete Application
@@ -50,7 +50,7 @@ https://klabbackend-sbhs.onrender.com/api/v1/application/:id
 3. Get One Event
    https://klabbackend-sbhs.onrender.com/api/v1/event/:id
 
-4.Update Event
+4. Update Event
 https://klabbackend-sbhs.onrender.com/api/v1/event/:id
 
 5. Delete Event
@@ -67,13 +67,13 @@ https://klabbackend-sbhs.onrender.com/api/v1/event/:id
 3. Get One Programs
    https://klabbackend-sbhs.onrender.com/api/v1/program/:id
 
-4.Update Programs
+4. Update Programs
 https://klabbackend-sbhs.onrender.com/api/v1/program/:id
 
 5. Delete Programs
    https://klabbackend-sbhs.onrender.com/api/v1/program/:id
 
-#5. Contact
+#6. Contact
 
 1. Create Contact
    https://klabbackend-sbhs.onrender.com/api/v1/contact/:
@@ -84,13 +84,13 @@ https://klabbackend-sbhs.onrender.com/api/v1/program/:id
 3. Get One Contact
    https://klabbackend-sbhs.onrender.com/api/v1/contact/:id
 
-4.Update Contact
+4. Update Contact
 https://klabbackend-sbhs.onrender.com/api/v1/contact/:id
 
 5. Delete Contact
    https://klabbackend-sbhs.onrender.com/api/v1/contact/:id
 
-#5. partner
+#7. partner
 
 1. Create partner
    https://klabbackend-sbhs.onrender.com/api/v1/partner/
@@ -101,13 +101,13 @@ https://klabbackend-sbhs.onrender.com/api/v1/contact/:id
 3. Get One partner
    https://klabbackend-sbhs.onrender.com/api/v1/partner/:id
 
-4.Update partner
+4. Update partner
 https://klabbackend-sbhs.onrender.com/api/v1/partner/:id
 
 5. Delete partner
    https://klabbackend-sbhs.onrender.com/api/v1/partner/:id
 
-#6. Apply for child
+#8. Apply for child
 
 1. Create child
    https://klabbackend-sbhs.onrender.com/api/v1/ApplyChild/
@@ -118,7 +118,7 @@ https://klabbackend-sbhs.onrender.com/api/v1/partner/:id
 3. Get One child
    https://klabbackend-sbhs.onrender.com/api/v1/getChild/:id
 
-4.Update child
+4. Update child
 https://klabbackend-sbhs.onrender.com/api/v1/updateChild/:id
 
 5. Delete child
