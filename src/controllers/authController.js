@@ -1,7 +1,6 @@
 import User from "../models/authModels";
 
 import jwt  from "jsonwebtoken";
-import { get } from "mongoose";
 
 
 // Generate tokens for user 

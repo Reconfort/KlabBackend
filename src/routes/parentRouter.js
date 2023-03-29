@@ -1,21 +1,28 @@
-import express from 'express';
-import { registerParent, addChild } from '../controllers/parentController';
-import StudentMiddleware from '../middleware/StudentMiddleware';
-// import auth from '../middleware/auth';
+import express from "express";
+import {
+  ApplyChild,
+  getChildren,
+  getChild,
+  updateChild,
+  deleteChild
+} from "../controllers/childController";
+import StudentMiddleware from "../middleware/StudentMiddleware";
 
 const router = express.Router();
 
-// Register a new parent
-router.post('/register', StudentMiddleware,(req,res)=>{
+// Apply for child
+router.post("/applyChild", StudentMiddleware, ApplyChild);
 
-    console.log(req.loggedParent);
-    return  res.status(201).json({
-        status:"success",
-        message:"Student added success"
-    })
-});
+// Get all children
+router.get("/getChildren", StudentMiddleware, getChildren);
 
-// Add child for parent
-router.post('/child', addChild);
+// Get child
+router.get("/getChild/:id", StudentMiddleware, getChild);
+
+// update child
+router.put("/updateChild/:id", StudentMiddleware, updateChild);
+
+// delete child
+router.delete("/deleteChild/:id", StudentMiddleware, deleteChild);
 
 export default router;
