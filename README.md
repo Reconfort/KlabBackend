@@ -110,3 +110,24 @@ NodeJs, Exrpess, MongoDb Resful Api
 
 5. Delete Contact
     https://klabbackend-sbhs.onrender.com/api/v1/contact/:id
+
+#5. partner 
+
+1. Create partner
+    https://klabbackend-sbhs.onrender.com/api/v1/partner/
+
+
+2. Gell all partner
+    https://klabbackend-sbhs.onrender.com/api/v1/partners
+
+
+3. Get One partner
+    https://klabbackend-sbhs.onrender.com/api/v1/partner/:id
+
+
+4.Update partner
+    https://klabbackend-sbhs.onrender.com/api/v1/partner/:id
+
+
+5. Delete partner
+    https://klabbackend-sbhs.onrender.com/api/v1/partner/:id
