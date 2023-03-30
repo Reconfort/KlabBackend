@@ -1,6 +1,5 @@
 import Users from "../models/authModels";
 import jwt from "jsonwebtoken";
-// import User from "../models/authModels";
 
 async function StudentMiddleware(req, res, next) {
   let token;

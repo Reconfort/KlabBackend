@@ -82,7 +82,10 @@ export const deleteProgram = async (req, res, next) => {
   try {
     const { id } = req.params;
     await Programs.findByIdAndDelete(id);
-    res.status(204).json("Deleted successfully");
+    res.status(204).json({
+      status: "success",
+      message: "Program deleted successfully",
+    });
   } catch (error) {
     next(error);
   }
