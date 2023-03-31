@@ -32,7 +32,10 @@ export const getPrograms = async (req, res, next) => {
     const programs = await Programs.find();
     res.status(200).json(programs);
   } catch (error) {
-    next(error);
+    return  res.status(500).json({
+      status: '404 Not Found',
+      error: error.message,
+    })
   }
 };
 
