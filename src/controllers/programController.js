@@ -17,7 +17,7 @@ export const createProgram = async (req, res, next) => {
       category: req.body.category,
       deadline: req.body.deadline,
       startDate: req.body.startDate,
-      endDate: req.body.startDate,
+      endDate: req.body.endDate,
     });
     await program.save();
     res.status(201).json(program);
