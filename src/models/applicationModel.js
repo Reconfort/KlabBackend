@@ -1,15 +1,15 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const applicationSchema = new mongoose.Schema({
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    fullname: {
-      type: String,
-      required: true,
-    },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  fullname: {
+    type: String,
+    required: true,
+  },
   phone: {
     type: String,
     required: true,
@@ -82,26 +82,23 @@ const applicationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  devcv: {
+  profile: {
     type: String,
   },
   devcvlink: {
     type: String,
   },
   entInnovationdesc: {
-      type: String,
-    },
-    shareInnovationModel: {
-        type: String,
-    },
-    entcv: {
-      type: String,
-    },
-    entcvlink: {
-      type: String,
-    },
+    type: String,
+  },
+  shareInnovationModel: {
+    type: String,
+  },
+  entcvlink: {
+    type: String,
+  },
 });
 
-const Application = mongoose.model('Application', applicationSchema);
+const Application = mongoose.model("Application", applicationSchema);
 
 export default Application;

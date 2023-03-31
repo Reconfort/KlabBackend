@@ -144,7 +144,7 @@ NodeJs, Exrpess, MongoDb Resful Api
 #10. Add project
 
 1. Create Project
-   https://klabbackend-sbhs.onrender.com/api/v1/team/
+   https://klabbackend-sbhs.onrender.com/api/v1/project/
 
 2. Gell all project
    https://klabbackend-sbhs.onrender.com/api/v1/projects
@@ -155,5 +155,5 @@ NodeJs, Exrpess, MongoDb Resful Api
 4. Update project
    https://klabbackend-sbhs.onrender.com/api/v1/project/:id
 
-5. Delete project
+5. Delete project 
    https://klabbackend-sbhs.onrender.com/api/v1/project/:id
