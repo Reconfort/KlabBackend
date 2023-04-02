@@ -29,10 +29,8 @@ export const createApplication = async (req, res) => {
       gitlink: req.body.gitlink,
       linkedinlink: req.body.linkedinlink,
       profile: result.secure_url,
-      devcvlink: req.body.devcvlink,
       entInnovationdesc: req.body.entInnovationdesc,
       shareInnovationModel: req.body.shareInnovationModel,
-      entcvlink: req.body.entcvlink,
     });
     await application.save();
     res.status(201).json({ success: true, data: application });
