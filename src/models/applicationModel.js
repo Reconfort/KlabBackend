@@ -85,16 +85,10 @@ const applicationSchema = new mongoose.Schema({
   profile: {
     type: String,
   },
-  devcvlink: {
-    type: String,
-  },
   entInnovationdesc: {
     type: String,
   },
   shareInnovationModel: {
-    type: String,
-  },
-  entcvlink: {
     type: String,
   },
 });
