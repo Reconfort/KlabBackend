@@ -76,14 +76,13 @@ const applicationSchema = new mongoose.Schema({
   },
   gitlink: {
     type: String,
-    required: true,
   },
   linkedinlink: {
     type: String,
-    required: true,
   },
   profile: {
     type: String,
+    required: true,
   },
   entInnovationdesc: {
     type: String,

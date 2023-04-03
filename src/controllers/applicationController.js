@@ -3,7 +3,6 @@ import { uploadToCloud } from "../helper/cloud";
 
 // create a new application
 export const createApplication = async (req, res) => {
-  console.log(req.body);
   try {
     const result = await uploadToCloud(req.file, res);
 
@@ -33,9 +32,13 @@ export const createApplication = async (req, res) => {
       shareInnovationModel: req.body.shareInnovationModel,
     });
     await application.save();
-    res.status(201).json({ success: true, data: application });
+    return res.status(201).json({
+      message: "Application created successfully!",
+      application
+    });
   } catch (error) {
-    res.status(400).json({ success: false, message: error.message });
+    console.log(error);
+    return res.status(500).json({ error: "Unable to create application." });
   }
 };
 
