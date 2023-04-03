@@ -5,6 +5,13 @@ import { uploadToCloud } from "../helper/cloud";
 export const createTeam = async (req, res) => {
     try {
         console.log(req.file)
+        if (!req.file) {
+          return res
+            .status(400)
+            .json({
+              message : 'Uploading imag'
+            });
+        }
         const result = await uploadToCloud(req.file, res);
         
         const team = new Team({
@@ -15,7 +22,6 @@ export const createTeam = async (req, res) => {
             twitterLink: req.body.twitterLink,
             linkedinLink: req.body.linkedinLink,
             instagramLink: req.body.instagramLink,
-            createdAt: Date.now()
         })
 
         await team.save();

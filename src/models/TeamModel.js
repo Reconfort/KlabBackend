@@ -24,10 +24,6 @@ const teamSchema =  new mongoose.Schema({
     },
     instagramLink: {
         type: String,
-    },
-    created_time: {
-        type: Date,
-        // required: true,
     }
 })
 
