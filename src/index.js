@@ -11,6 +11,8 @@ import contactRouter from "./routes/contactRouter";
 import partnerRouter from "./routes/partnerRoutes";
 import parentRoute from "./routes/parentRouter";
 import projectRoute from "./routes/projectRoutes"
+import morgan from "morgan";
+
 
 import cors from "cors";
 dotenv.config();
@@ -21,6 +23,7 @@ connectDB();
 
 app.use(express.json());
 app.use(cors());
+app.use(morgan("dev"));
 
 // Mount the user router to the /api/v1 path
 app.use("/api/v1", userRouter);

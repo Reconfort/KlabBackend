@@ -4,6 +4,7 @@ import { uploadToCloud } from "../helper/cloud";
 // create new Team 
 export const createTeam = async (req, res) => {
     try {
+        console.log(req.file)
         const result = await uploadToCloud(req.file, res);
         
         const team = new Team({
