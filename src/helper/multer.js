@@ -10,6 +10,7 @@ const fileUpload = multer({
       ext !== ".jpg" &&
       ext !== ".jpeg" &&
       ext !== ".pdf" &&
+      ext !== ".svg" &&
       ext !== ".zip" &&
       ext !== ".rar" &&
       ext !== ".gif" &&

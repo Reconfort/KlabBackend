@@ -25,7 +25,7 @@ const teamSchema =  new mongoose.Schema({
     instagramLink: {
         type: String,
     }
-})
+});
 
 const Team = mongoose.model('Team', teamSchema);
 
