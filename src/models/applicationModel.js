@@ -63,15 +63,12 @@ const applicationSchema = new mongoose.Schema({
   },
   areyoudev: {
     type: String,
-    required: true,
   },
   skillyouwantjoin: {
     type: String,
-    required: true,
   },
   skilldesc: {
     type: String,
-    required: true,
   },
   gitlink: {
     type: String,
