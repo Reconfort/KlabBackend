@@ -37,6 +37,9 @@ const applicationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  cohort: {
+    type: Number,
+  },
   areyougraduate: {
     type: String,
     required: true,
@@ -85,6 +88,11 @@ const applicationSchema = new mongoose.Schema({
   },
   shareInnovationModel: {
     type: String,
+  },
+  status: {
+    type: String,
+    enum: ["pending", "online", "physical", "waiting", "rejected"],
+    default: "pending",
   },
 });
 

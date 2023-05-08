@@ -4,6 +4,12 @@ import { uploadToCloud } from "../helper/cloud";
 // create program
 export const createProgram = async (req, res, next) => {
   try {
+    if (!req.file) {
+      return res.status(400).json({
+        status: "fail",
+        message: "file program",
+      });
+    }
     const result = await uploadToCloud(req.file, res);
 
     // console.log(req.body);
@@ -11,10 +17,11 @@ export const createProgram = async (req, res, next) => {
     const program = new Programs({
       title: req.body.title,
       profile: result.secure_url,
+      cohort:req.body.cohort,
       tags: req.body.tags,
       details: req.body.details,
       location: req.body.location,
-      category: req.body.category,
+      // category: req.body.category,
       deadline: req.body.deadline,
       startDate: req.body.startDate,
       endDate: req.body.endDate,
@@ -67,7 +74,8 @@ export const updateProgram = async (req, res, next) => {
         tags: req.body.tags,
         details: req.body.details,
         location: req.body.location,
-        category: req.body.category,
+        cohort:req.body.cohort,
+        // category: req.body.category,
         deadline: req.body.deadline,
         startDate: req.body.startDate,
         endDate: req.body.startDate,
