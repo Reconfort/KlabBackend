@@ -1,28 +1,32 @@
-import multer from "multer";
-import path from "path";
+import multer  from "multer";
+import path from "path"
+
 
 const fileUpload = multer({
   storage: multer.diskStorage({}),
   fileFilter: (req, file, cb) => {
-    let ext = path.extname(file.originalname);
-    if (
-      ext !== ".png" &&
-      ext !== ".jpg" &&
-      ext !== ".jpeg" &&
-      ext !== ".pdf" &&
-      ext !== ".svg" &&
-      ext !== ".zip" &&
-      ext !== ".rar" &&
-      ext !== ".gif" &&
-      ext !== ".tif" &&
-      ext !== ".webp" &&
-      ext !== ".bmp" &&
-      ext !== ".tiff"
-    ) {
-      return cb(new Error("Invalid file type"), false);
+    const allowedExtensions = [
+      ".png",
+      ".jpg",
+      ".jpeg",
+      ".pdf",
+      ".svg",
+      ".zip",
+      ".rar",
+      ".gif",
+      ".tif",
+      ".webp",
+      ".bmp",
+      ".tiff",
+    ];
+    const ext = path.extname(file.originalname).toLowerCase();
+    if (!allowedExtensions.includes(ext)) {
+      return cb(new Error("Invalid file type"));
     }
+    req.fileFormat = ext === ".pdf" ? "application/pdf" : file.mimetype;
     cb(null, true);
   },
 });
 
-export default fileUpload;
+
+export  default fileUpload;

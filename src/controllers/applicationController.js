@@ -9,7 +9,7 @@ export const createApplication = async (req, res) => {
     if (!req.file)
       return res.status(400).json({
         status: "fail",
-        mssage: "CV/Resume  is  required  field",
+        mssage: "CV / Resume  is  required  field",
       });
 
     const result = await uploadToCloud(req.file, res);
@@ -404,9 +404,13 @@ export const waitingApproval = async (req, res) => {
 	<p>The KLabTechUpSkills Training Team</p>
 </body>
 </html>
-
       `
     );
+
+    return res.status(200).json({
+      status: "success",
+      message: "You are now on the waiting list",
+    });
   } catch (error) {
     return res.status(500).json({
       status: "fail",

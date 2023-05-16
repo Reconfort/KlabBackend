@@ -1,7 +1,7 @@
 {
   "name": "klabbackend",
   "version": "1.0.0",
-  "description": "Klab Backend Resful API made in NodeJs, Express, Mongodb",
+  "description": "Klab Backend Restful API made in NodeJs, Express, Mongodb",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",

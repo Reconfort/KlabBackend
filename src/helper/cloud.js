@@ -11,6 +11,7 @@ cloudinary.config({
 export const uploadToCloud = async (file, res) => {
   try {
     const profilePicture = await cloudinary.uploader.upload(file.path, {
+      // resource_type: "raw",
       folder: "profile",
       use_filename: true,
     });
@@ -19,3 +20,4 @@ export const uploadToCloud = async (file, res) => {
     return res.status(500).send(error);
   }
 };
+
