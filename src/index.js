@@ -8,11 +8,11 @@ import eventRouter from "./routes/eventRoute";
 import programRouter from "./routes/programsRouter";
 import teamRouter from "./routes/teamRouter";
 import contactRouter from "./routes/contactRouter";
+import trainerRoute from "./routes/trainersRoute";
 import partnerRouter from "./routes/partnerRoutes";
 import parentRoute from "./routes/parentRouter";
-import projectRoute from "./routes/projectRoutes"
+import projectRoute from "./routes/projectRoutes";
 import morgan from "morgan";
-
 
 import cors from "cors";
 dotenv.config();
@@ -51,6 +51,7 @@ app.use("/api/v1", partnerRouter);
 
 // Mount the project router to the /api/v1 path
 app.use("/api/v1", projectRoute);
+app.use("/api/v1/trainers", trainerRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

@@ -14,8 +14,13 @@ export const createApplication = async (req, res) => {
 
     const result = await uploadToCloud(req.file, res);
     const program = await Programs.findOne({ title: "KLab Startups Academy" });
-
-    const application = new Application({
+    
+    const applicantEmail = await Application.findOne({ email: req.body.email });
+    
+    if(applicantEmail){
+      
+    }
+    const application = Application.create({
       email: req.body.email,
       fullname: req.body.fullname,
       phone: req.body.phone,
@@ -62,8 +67,6 @@ export const createApplication = async (req, res) => {
 </html>
   `
     );
-
-    await application.save();
     return res.status(201).json({
       message: "Application created successfully!",
       application,
