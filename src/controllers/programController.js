@@ -17,7 +17,7 @@ export const createProgram = async (req, res, next) => {
     const program = new Programs({
       title: req.body.title,
       profile: result.secure_url,
-      cohort:req.body.cohort,
+      cohort: req.body.cohort,
       tags: req.body.tags,
       details: req.body.details,
       location: req.body.location,
@@ -65,23 +65,21 @@ export const getProgramById = async (req, res) => {
 export const updateProgram = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const result = await uploadToCloud(req.file, res);
-    const program = await Programs.findByIdAndUpdate(
-      id,
-      {
-        title: req.body.title,
+    let newData;
+    const programData = await Programs.findByIdAndUpdate(id, newData);
+    if (req.file) {
+      const result = await uploadToCloud(req.file, res);
+      newData = {
+        ...req.body,
         profile: result.secure_url,
-        tags: req.body.tags,
-        details: req.body.details,
-        location: req.body.location,
-        cohort:req.body.cohort,
-        // category: req.body.category,
-        deadline: req.body.deadline,
-        startDate: req.body.startDate,
-        endDate: req.body.startDate,
-      },
-      { new: true }
-    );
+      };
+    } else {
+      newData = { ...req.body, profile: programData.profile };
+    }
+
+    const program = await Programs.findByIdAndUpdate(id, newData, {
+      new: true,
+    });
     return res.status(200).json(program);
   } catch (error) {
     next(error);

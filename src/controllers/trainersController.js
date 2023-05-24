@@ -45,7 +45,6 @@ const createTrainer = async (req, res) => {
     }
     const trainerProfile = await uploadToCloud(req.file, res);
 
-
     const trainer = await Trainer.create({
       name,
       email,
@@ -67,11 +66,13 @@ const createTrainer = async (req, res) => {
 // PUT (update) an existing trainer
 const updateTrainer = async (req, res) => {
   let trainerProfile, newData;
+  const trainerData = await Trainer.findById(req.params.id);
+
   if (req.file) {
     trainerProfile = await uploadToCloud(req.file, res);
     newData = { ...req.body, profile: trainerProfile.secure_url };
   } else {
-    newData = { ...req.body };
+    newData = { ...req.body, profile: trainerData.profile };
   }
   try {
     const trainer = await Trainer.findByIdAndUpdate(req.params.id, newData, {
@@ -100,7 +101,6 @@ const deleteTrainer = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
 export default {
   getAllTrainers,
   getTrainerById,
